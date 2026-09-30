@@ -16,4 +16,18 @@ while expense != 0:
         expenses.append(expense)
     
 
+#Classify Expenses
+small_expenses = 0
+moderate_expenses = 0
+large_expenses = 0
+
+for number in expenses:
+    if number < 25 and number > 0:
+        small_expenses += 1
+    elif number >= 25 and number <= 100:
+        moderate_expenses += 1
+    elif number > 100:
+        large_expenses += 1
+
+print(small_expenses, moderate_expenses, large_expenses)
 print(expenses)
