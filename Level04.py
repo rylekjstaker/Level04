@@ -4,10 +4,9 @@
 
 #Creating the expense list
 expenses = []
-
-# input loop
 expense = 1
 
+# input loop
 while expense != 0:
     expense = float(input("Enter an expense or 0 to finish: "))
     if expense < 0:
@@ -29,5 +28,25 @@ for number in expenses:
     elif number > 100:
         large_expenses += 1
 
-print(small_expenses, moderate_expenses, large_expenses)
-print(expenses)
+
+#Calculate results
+expense_count = len(expenses)
+total_expense = sum(expenses)
+average_expense = total_expense / expense_count
+smallest_expense = min(expenses)
+largest_expense = max(expenses)
+
+#Print results
+print("Expense Summary")
+print("---------------")
+print(f'Number of expenses: {expense_count}')
+print(f'Total: ${total_expense:,.2f}')
+print(f'Average: ${average_expense:,.2f}')
+print(f'Smallest expense: ${smallest_expense:,.2f}')
+print(f'Largest expense: ${largest_expense:,.2f}')
+
+print(f'\nSmall expenses: {small_expenses}')
+print(f'Moderate expenses: {moderate_expenses}')
+print(f'Large expenses: {large_expenses}')
+
+
